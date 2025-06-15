@@ -55,7 +55,7 @@ def call (Map configMap) {
                 }
             }
             steps {
-                build job: 'backend-cd', parameters: [string(name:'version', value: "${appVersion}")], propagate: true
+                build job: "${COMPONENT}-cd", parameters: [string(name:'version', value: "${appVersion}")], propagate: true
 
             }
         }
