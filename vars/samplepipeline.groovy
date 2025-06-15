@@ -9,9 +9,7 @@ def call (Map configMap) {
             stage('Greet') {
                 steps {
                     script {
-                        sh """
-                        echo " Version is $greet"
-                        """
+                        echo " Version is $greet"  
                     }
                 }
             }
