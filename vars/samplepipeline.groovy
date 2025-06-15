@@ -3,16 +3,15 @@ def call (Map configMap) {
         agent { label 'STAGE-1'}
         environment {
             greet = configMap.get('greet')
-        }
-        parameters {
-            booleanParam(name: 'deploy', defaultValue: false, description: 'select when you are ready to deploy')
         }    
 
         stages {
             stage('Greet') {
                 steps {
                     script {
+                        sh """
                         echo " Version is $greet"
+                        """
                     }
                 }
             }
